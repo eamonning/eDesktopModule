@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html dir="ltr" lang="zh">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="keywords" content="osphp" />
+<meta name="description" content="osphp" />
+<title></title>
+<script language="javascript">
+var _osphp={};
+//设定根目录
+_osphp.root='./';
+//js文件后缀
+_osphp.jsSuffix='.src.js';
+//css文件后缀
+_osphp.cssSuffix='.src.css';
+//管理路径
+_osphp.managePath='./';
+//语言
+_osphp.lang='zh';
+document.write(unescape('%3Cscript src="'+_osphp.root+'js/jquery.js"%3E%3C/script%3E'));
+document.write(unescape('%3Cscript src="'+_osphp.root+'js/jquery.extern'+_osphp.jsSuffix+'"%3E%3C/script%3E'));
+</script>
+</head>
+<body>
+</body>
+<!--[if lt IE 7]>
+<script language="javascript">
+window.location.href='ie.html';
+</script>
+<![endif]-->
+<script language="javascript">
+$.includeJS(['jquery.md5','jquery.winResize'],'js/');
+$.includeJS(['lhgdialog/lhgdialog','contextmenu/jquery.contextmenu','jquery.ui/jquery.ui'],_osphp.managePath+'openlib/');
+$.includeJS(['opd.lang','opd.v1'],_osphp.managePath+'js/');
+
+
+$.includeCSS(['css/reset']);
+$.includeCSS(['contextmenu/contextmenu','jquery.ui/style'],_osphp.managePath+'openlib/');
+$.includeCSS(['default'],_osphp.managePath+'css/');
+
+$(function(){
+	OPD.run();
+});
+</script>
+<!--[if IE]>
+<script language="javascript">
+$.includeCSS([_osphp.managePath+'css/default.ie']);
+</script>
+<![endif]-->
+</html>
